@@ -21,7 +21,7 @@ public class BaseTest {
 
     public AndroidDriver<MobileElement> driver;
     public WebDriverWait wait;
-    private ThreadLocalDriver threadLocalDriver = new ThreadLocalDriver();
+    //private ThreadLocalDriver threadLocalDriver = new ThreadLocalDriver();
     //Base Screens for all cases
     protected SplashScreen splashScreen = null;
     protected TutorialScreen tutorialScreen = null;
@@ -32,6 +32,12 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"deviceName", "platformVersion"})
     public void setup (String deviceName, String platformVersion) throws IOException {
+        System.out.println("TestNG Before");
+
+        //Unlock the device if it is locked.
+        final Runtime rt = Runtime.getRuntime();
+        rt.exec("adb shell input keyevent 224");
+
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", deviceName);
         caps.setCapability("platformVersion", platformVersion);
@@ -40,13 +46,11 @@ public class BaseTest {
         caps.setCapability("appActivity","com.isinolsun.app.activities.SplashActivity");
         caps.setCapability("skipUnlock","true");
         caps.setCapability("noReset","false");
-        threadLocalDriver.setTLDriver(new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4444/wd/hub"),caps));
-        driver = threadLocalDriver.getTLDriver();
+        ThreadLocalDriver.setTLDriver(new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4444/wd/hub"),caps));
+        driver = ThreadLocalDriver.getTLDriver();
         wait = new WebDriverWait(driver, 10);
 
-        //Unlock the device if it is locked.
-        final Runtime rt = Runtime.getRuntime();
-        rt.exec("adb shell input keyevent 224");
+
 
         //Base Screen Initialization
         splashScreen = new SplashScreen(driver);

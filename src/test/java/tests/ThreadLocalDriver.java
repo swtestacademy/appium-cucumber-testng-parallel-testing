@@ -9,11 +9,11 @@ public class ThreadLocalDriver {
     private static ThreadLocal<AndroidDriver<MobileElement>> tlDriver = new ThreadLocal<>();
 
     //AF: Setting Webdriver to ThreadLocal driver (
-    public synchronized void setTLDriver(AndroidDriver driver) {
+    public static synchronized void setTLDriver(AndroidDriver driver) {
         tlDriver.set(driver);
     }
 
-    public synchronized AndroidDriver getTLDriver() {
+    public static synchronized AndroidDriver getTLDriver() {
         return tlDriver.get();
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="IsinOlsun-Android-Test-Suite" parallel="tests" thread-count="3">
+
+    <!--SonyXperia_Settings-->
+    <test name="Test-Sony-Xperia" parallel="classes" thread-count="3">
+        <parameter name="deviceName" value="192.168.0.23:5656" />
+        <parameter name="platformVersion" value="7.0" />
+        <classes>
+            <class name="tests.candidate.tests.ApplyToJob" />
+        </classes>
+    </test>
+
+    <!--LG-G4_Settings-->
+    <test name="Test-LG-G4" parallel="classes" thread-count="3">
+        <parameter name="deviceName" value="LG-G4" />
+        <parameter name="udid" value="192.168.0.25:5657" />
+        <parameter name="platformVersion" value="6.0" />
+        <classes>
+            <class name="tests.candidate.tests.ApplyToJob" />
+        </classes>
+    </test>
+
+</suite>
