@@ -13,15 +13,7 @@
     </test>-->
 
 
-
-
-
-
-
-
-
-<!--
-    <test name="Test-LG-G4" parallel="classes" thread-count="5">
+<!--    <test name="Test-LG-G4" parallel="classes" thread-count="5">
         <parameter name="deviceName" value="LG-G4" />
         <parameter name="udid" value="192.168.18.61:5657" />
         <parameter name="platformVersion" value="6.0" />
@@ -31,8 +23,17 @@
     </test>-->
 
 
-       <test name="Test-Sony-Xperia" parallel="classes" thread-count="5">
-        <parameter name="deviceName" value="192.168.17.47:5656" />
+ <!--   <test name="Test-Sony-Xperia" parallel="classes" thread-count="5">
+        <parameter name="deviceName" value="Sony-Xperia" />
+        <parameter name="platformVersion" value="7.0" />
+        <classes>
+            <class name="tests.cucumber.tests.RunLoginCandidateFeature" />
+        </classes>
+    </test>-->
+
+
+    <test name="Test-LG-G4" parallel="classes" thread-count="5">
+        <parameter name="deviceName" value="LG-G4" />
         <parameter name="platformVersion" value="7.0" />
         <classes>
             <class name="tests.cucumber.tests.RunLoginCandidateFeature" />
