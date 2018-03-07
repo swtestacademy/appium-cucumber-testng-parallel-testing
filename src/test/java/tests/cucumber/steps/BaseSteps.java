@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import screens.*;
 import tests.ThreadLocalDriver;
 
+import java.io.IOException;
+
 public class BaseSteps {
 
     protected SplashScreen splashScreen = null;
@@ -27,6 +29,14 @@ public class BaseSteps {
         tutorialScreen = new TutorialScreen(driver);
         selectionScreen = new SelectionScreen(driver);
         candidateMainScreen = new CandidateMainScreen(driver);
+
+        //Unlock the device if it is locked.
+        final Runtime rt = Runtime.getRuntime();
+        try {
+            rt.exec("adb shell input keyevent 224");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void teardown(){

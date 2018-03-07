@@ -29,21 +29,21 @@ public class RunLoginCandidateFeature extends  BaseTest {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
-    public void setUpClass() throws Exception {
+    public void setUpClass() {
         System.out.println("Cucumber Test Class Before");
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 
     @Test(groups = "cucumber", description = "Runs LoginCandiate Feature", dataProvider = "features")
     public void feature(CucumberFeatureWrapper cucumberFeature) {
-        System.out.println("Cucumber Test Class İnside Test");
+        System.out.println("Cucumber Test Class Inside Test");
         System.out.println(cucumberFeature.getCucumberFeature());
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
 
     @DataProvider
     public Object[][] features() {
-        System.out.println("Data PRovider test Class");
+        System.out.println("Data Provider test Class");
         return testNGCucumberRunner.provideFeatures();
     }
 
