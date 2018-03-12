@@ -1,0 +1,182 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 95549013,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginSteps.setupLoginSteps()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Login the app successfully as a candidate",
+        "description": "",
+        "id": "candidate-successful-login-feature;login-the-app-successfully-as-a-candidate",
+        "after": [
+          {
+            "result": {
+              "duration": 97280,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginSteps.teardown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8446189653,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I have skipped Splash and Tutorial pages and I am on the job selection pages",
+            "match": {
+              "location": "LoginSteps.iHaveSkippedSplashAndTutorialPagesAndIAmOnTheJobSelectionPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3077363200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I click İs Ariyorum button",
+            "match": {
+              "location": "LoginSteps.iClickİsAriyorumButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1030724267,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I go to Profilim page",
+            "match": {
+              "location": "LoginSteps.iGoToProfilimPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 855348480,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I click Giris Yap button",
+            "match": {
+              "location": "LoginSteps.iClickGirisYapButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7253350827,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I fill \"5910000010\" as my telephone number",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5910000010",
+                  "offset": 8
+                }
+              ],
+              "location": "LoginSteps.iFillAsMyTelephoneNumber(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1442021547,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I click Giriş Yap button",
+            "match": {
+              "location": "LoginSteps.iClickGirişYapButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1901761707,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I give permission for SMS",
+            "match": {
+              "location": "LoginSteps.iGivePermissionForSMS()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6341557760,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I fill \"35880\" as a login code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "35880",
+                  "offset": 8
+                }
+              ],
+              "location": "LoginSteps.iFillAsALoginCode(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1902310400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I click Tamam button",
+            "match": {
+              "location": "LoginSteps.iClickTamamButton()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1283732053,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I should see my profile page",
+            "match": {
+              "location": "LoginSteps.iShouldSeeMyProfilePage()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Candidate Successful Login Feature",
+    "description": "",
+    "id": "candidate-successful-login-feature",
+    "keyword": "Feature",
+    "uri": "src/test/java/tests/cucumber/features/LoginCandidate.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@Candidate"
+      }
+    ]
+  }
+]

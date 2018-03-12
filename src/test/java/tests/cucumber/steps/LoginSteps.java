@@ -1,25 +1,19 @@
 package tests.cucumber.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
-import org.jsoup.Connection;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import screens.LoginScreen;
 import screens.MyProfileScreen;
 import screens.PassCodeScreen;
 import screens.ProfileLoginScreen;
 
-
 public class LoginSteps extends BaseSteps {
 
-    //Burada BaseTEst'deki gibi bir setup yapmam lazım. Thread local driver ortak olacak.
+    //Instantiations
     ProfileLoginScreen profileLoginScreen;
     LoginScreen loginScreen;
     PassCodeScreen passCodeScreen;

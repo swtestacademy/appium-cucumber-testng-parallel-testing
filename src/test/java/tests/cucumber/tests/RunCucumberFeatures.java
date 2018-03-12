@@ -24,7 +24,7 @@ import tests.BaseTest;
                 "rerun:target/cucumber-reports/rerun.txt",
                 }
                 )
-public class RunLoginCandidateFeature extends  BaseTest {
+public class RunCucumberFeatures extends  BaseTest {
 
     private TestNGCucumberRunner testNGCucumberRunner;
 

@@ -1,14 +1,10 @@
 package tests.cucumber.steps;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import screens.*;
 import tests.ThreadLocalDriver;
-
-import java.io.IOException;
 
 public class BaseSteps {
 
@@ -18,7 +14,6 @@ public class BaseSteps {
     protected CandidateMainScreen candidateMainScreen = null;
     protected AndroidDriver<MobileElement> driver;
     protected WebDriverWait wait;
-
 
     //Screen Classes Initialization
     protected void setupCucumber () {
@@ -30,13 +25,13 @@ public class BaseSteps {
         selectionScreen = new SelectionScreen(driver);
         candidateMainScreen = new CandidateMainScreen(driver);
 
-        //Unlock the device if it is locked.
+        /*//Unlock the device if it is locked.
         final Runtime rt = Runtime.getRuntime();
         try {
             rt.exec("adb shell input keyevent 224");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     protected void teardown(){

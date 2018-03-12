@@ -1,0 +1,8 @@
+screens\CandidateMainScreen.class
+screens\LoginScreen.class
+screens\PassCodeScreen.class
+screens\SelectionScreen.class
+screens\SplashScreen.class
+screens\TutorialScreen.class
+screens\ProfileLoginScreen.class
+screens\BaseScreen.class

@@ -5,7 +5,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.Parameters;
 
 
-@CucumberOptions(
+/*@CucumberOptions(
         features = "src/test/java/tests/cucumber/features/LoginCandidate.feature",
         glue = {"tests.cucumber.steps"},
         format = {"pretty",
@@ -13,5 +13,5 @@ import org.testng.annotations.Parameters;
                 "json:target/cucumber-report/loginCandidate/cucumber.json",
                 "junit:target/cucumber-report/loginCandidate/cucumber.xml"})
 public class Runner extends AbstractTestNGCucumberTests {
-}
+}*/
 
