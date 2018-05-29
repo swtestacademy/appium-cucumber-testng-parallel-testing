@@ -5,7 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 public class MyProfileScreen extends BaseScreen{
-    public MyProfileScreen(AndroidDriver<MobileElement> driver) {
+    public MyProfileScreen(AndroidDriver driver) {
         super(driver);
     }
 

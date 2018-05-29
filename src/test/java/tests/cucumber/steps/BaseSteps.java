@@ -12,18 +12,16 @@ public class BaseSteps {
     protected TutorialScreen tutorialScreen = null;
     protected SelectionScreen selectionScreen = null;
     protected CandidateMainScreen candidateMainScreen = null;
-    protected AndroidDriver<MobileElement> driver;
     protected WebDriverWait wait;
 
     //Screen Classes Initialization
     protected void setupCucumber () {
         System.out.println("Cucumber Base Test Before-login-test-cucumber");
-        driver = ThreadLocalDriver.getTLDriver();
-        wait = new WebDriverWait(driver, 10);
-        splashScreen = new SplashScreen(driver);
-        tutorialScreen = new TutorialScreen(driver);
-        selectionScreen = new SelectionScreen(driver);
-        candidateMainScreen = new CandidateMainScreen(driver);
+        wait = new WebDriverWait(ThreadLocalDriver.getTLDriver(), 10);
+        splashScreen = new SplashScreen(ThreadLocalDriver.getTLDriver());
+        tutorialScreen = new TutorialScreen(ThreadLocalDriver.getTLDriver());
+        selectionScreen = new SelectionScreen(ThreadLocalDriver.getTLDriver());
+        candidateMainScreen = new CandidateMainScreen(ThreadLocalDriver.getTLDriver());
 
         /*//Unlock the device if it is locked.
         final Runtime rt = Runtime.getRuntime();
@@ -35,6 +33,6 @@ public class BaseSteps {
     }
 
     protected void teardown(){
-        driver.quit();
+        ThreadLocalDriver.getTLDriver().quit();
     }
 }

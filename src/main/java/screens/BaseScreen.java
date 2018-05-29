@@ -1,6 +1,5 @@
 package screens;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -12,10 +11,10 @@ import org.testng.Assert;
 
 public class BaseScreen {
 
-    protected AndroidDriver<MobileElement> driver;
+    protected AndroidDriver driver;
     protected WebDriverWait wait;
 
-    public BaseScreen (AndroidDriver<MobileElement> driver){
+    public BaseScreen (AndroidDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, 15);
     }
@@ -25,6 +24,7 @@ public class BaseScreen {
     }
 
     protected void click (By by) {
+        waitVisibility(by);
         driver.findElement(by).click();
     }
 
@@ -63,5 +63,14 @@ public class BaseScreen {
 
     protected void waitVisibility (By by) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+
+    protected void sleep (long time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

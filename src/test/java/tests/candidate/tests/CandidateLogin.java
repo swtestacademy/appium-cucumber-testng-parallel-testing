@@ -4,24 +4,23 @@ import org.testng.annotations.Test;
 import screens.LoginScreen;
 import screens.MyProfileScreen;
 import screens.PassCodeScreen;
-import screens.ProfileLoginScreen;
+import screens.CandidateLoginScreen;
 import tests.BaseTest;
+import tests.ThreadLocalDriver;
 
 public class CandidateLogin extends BaseTest {
 
     public LoginScreen loginScreen;
-    public ProfileLoginScreen profileLoginScreen;
+    public CandidateLoginScreen profileLoginScreen;
     public PassCodeScreen passCodeScreen;
     public MyProfileScreen myProfileScreen;
 
-
-
     @Test
     public void candidateLogin_Successful () {
-        loginScreen = new LoginScreen(driver);
-        profileLoginScreen = new ProfileLoginScreen(driver);
-        passCodeScreen = new PassCodeScreen(driver);
-        myProfileScreen = new MyProfileScreen(driver);
+        loginScreen = new LoginScreen(ThreadLocalDriver.getTLDriver());
+        profileLoginScreen = new CandidateLoginScreen(ThreadLocalDriver.getTLDriver());
+        passCodeScreen = new PassCodeScreen(ThreadLocalDriver.getTLDriver());
+        myProfileScreen = new MyProfileScreen(ThreadLocalDriver.getTLDriver());
 
         splashScreen.skipSplashScreen();
         tutorialScreen.skipTutorial();

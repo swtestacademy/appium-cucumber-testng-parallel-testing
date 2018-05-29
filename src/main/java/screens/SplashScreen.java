@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 public class SplashScreen extends BaseScreen{
 
-    public SplashScreen(AndroidDriver<MobileElement> driver) {
+    public SplashScreen(AndroidDriver driver) {
         super(driver);
     }
 

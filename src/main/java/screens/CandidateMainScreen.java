@@ -1,13 +1,12 @@
 package screens;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 public class CandidateMainScreen extends BaseScreen {
 
 
-    public CandidateMainScreen(AndroidDriver<MobileElement> driver) {
+    public CandidateMainScreen(AndroidDriver driver) {
         super(driver);
     }
 

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PassCodeScreen extends BaseScreen {
-    public PassCodeScreen(AndroidDriver<MobileElement> driver) {
+    public PassCodeScreen(AndroidDriver driver) {
         super(driver);
     }
 

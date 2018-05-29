@@ -1,40 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="IsinOlsun-Android-Test-Suite" parallel="tests" thread-count="5">
+<suite name="IsinOlsun-Android-Test-Suite" parallel="tests" thread-count="2">
 
     <!--SonyXperia_Settings-->
-<!--   <test name="Test-Sony-Xperia" parallel="classes" thread-count="5">
-        <parameter name="deviceName" value="192.168.17.47:5656" />
+  <test name="Test-Sony-Xperia">
+        <parameter name="deviceName" value="Sony-Xperia" />
         <parameter name="platformVersion" value="7.0" />
         <classes>
-            <class name="tests.candidate.tests.CandidateLogin" />
+            <class name="tests.candidate.tests.ApplyToJob" />
         </classes>
-    </test>-->
+    </test>
 
-
-<!--    <test name="Test-LG-G4" parallel="classes" thread-count="5">
+    <test name="Test-LG-G4">
         <parameter name="deviceName" value="LG-G4" />
         <parameter name="platformVersion" value="6.0" />
         <classes>
             <class name="tests.candidate.tests.ApplyToJob" />
-        </classes>
-    </test>-->
-
-
-   <test name="Test-Sony-Xperia" parallel="classes" thread-count="5">
-        <parameter name="deviceName" value="Sony-Xperia" />
-        <parameter name="platformVersion" value="7.0" />
-        <classes>
-            <class name="tests.cucumber.tests.RunCucumberFeatures" />
-        </classes>
-    </test>
-
-   <test name="Test-LG-G4" parallel="classes" thread-count="5">
-        <parameter name="deviceName" value="LG-G4" />
-        <parameter name="platformVersion" value="6.0" />
-        <classes>
-            <class name="tests.cucumber.tests.RunCucumberFeatures" />
         </classes>
     </test>
 

@@ -3,6 +3,7 @@ package tests;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
@@ -19,7 +20,6 @@ import java.net.URL;
 
 public class BaseTest {
 
-    public AndroidDriver<MobileElement> driver;
     public WebDriverWait wait;
     //private ThreadLocalDriver threadLocalDriver = new ThreadLocalDriver();
     //Base Screens for all cases
@@ -27,7 +27,6 @@ public class BaseTest {
     protected TutorialScreen tutorialScreen = null;
     protected SelectionScreen selectionScreen = null;
     protected CandidateMainScreen candidateMainScreen = null;
-
 
     @BeforeMethod
     @Parameters({"deviceName", "platformVersion"})
@@ -44,24 +43,20 @@ public class BaseTest {
         caps.setCapability("platformName", "Android");
         caps.setCapability("appPackage", "com.isinolsun.app");
         caps.setCapability("appActivity","com.isinolsun.app.activities.SplashActivity");
-        caps.setCapability("skipUnlock","true");
         caps.setCapability("noReset","false");
-        ThreadLocalDriver.setTLDriver(new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4444/wd/hub"),caps));
-        driver = ThreadLocalDriver.getTLDriver();
-        wait = new WebDriverWait(driver, 10);
-
-
+        ThreadLocalDriver.setTLDriver(new AndroidDriver (new URL("http://127.0.0.1:4444/wd/hub"),caps));
+        wait = new WebDriverWait(ThreadLocalDriver.getTLDriver(), 10);
 
         //Base Screen Initialization
-        splashScreen = new SplashScreen(driver);
-        tutorialScreen = new TutorialScreen(driver);
-        selectionScreen = new SelectionScreen(driver);
-        candidateMainScreen = new CandidateMainScreen(driver);
+        splashScreen = new SplashScreen(ThreadLocalDriver.getTLDriver());
+        tutorialScreen = new TutorialScreen(ThreadLocalDriver.getTLDriver());
+        selectionScreen = new SelectionScreen(ThreadLocalDriver.getTLDriver());
+        candidateMainScreen = new CandidateMainScreen(ThreadLocalDriver.getTLDriver());
     }
 
     @AfterMethod
     public synchronized void teardown(){
-        driver.quit();
+        ThreadLocalDriver.getTLDriver().quit();
     }
 
 }

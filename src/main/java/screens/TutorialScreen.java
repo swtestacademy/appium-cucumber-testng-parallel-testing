@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 
 public class TutorialScreen extends BaseScreen{
 
-    public TutorialScreen (AndroidDriver<MobileElement> driver) {
+    public TutorialScreen (AndroidDriver driver) {
         super(driver);
     }
 

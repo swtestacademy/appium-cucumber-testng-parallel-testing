@@ -9,12 +9,13 @@ import cucumber.api.java.en.When;
 import screens.LoginScreen;
 import screens.MyProfileScreen;
 import screens.PassCodeScreen;
-import screens.ProfileLoginScreen;
+import screens.CandidateLoginScreen;
+import tests.ThreadLocalDriver;
 
 public class LoginSteps extends BaseSteps {
 
     //Instantiations
-    ProfileLoginScreen profileLoginScreen;
+    CandidateLoginScreen profileLoginScreen;
     LoginScreen loginScreen;
     PassCodeScreen passCodeScreen;
     MyProfileScreen myProfileScreen;
@@ -24,10 +25,10 @@ public class LoginSteps extends BaseSteps {
     public void setupLoginSteps () {
         System.out.println("Cucumber Before-login-test-cucumber");
         setupCucumber();
-        profileLoginScreen = new ProfileLoginScreen(driver);
-        loginScreen = new LoginScreen(driver);
-        passCodeScreen = new PassCodeScreen(driver);
-        myProfileScreen = new MyProfileScreen(driver);
+        profileLoginScreen = new CandidateLoginScreen(ThreadLocalDriver.getTLDriver());
+        loginScreen = new LoginScreen(ThreadLocalDriver.getTLDriver());
+        passCodeScreen = new PassCodeScreen(ThreadLocalDriver.getTLDriver());
+        myProfileScreen = new MyProfileScreen(ThreadLocalDriver.getTLDriver());
 
     }
 

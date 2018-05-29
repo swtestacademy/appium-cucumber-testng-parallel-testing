@@ -1,12 +1,11 @@
 package screens;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 
 public class SelectionScreen extends BaseScreen {
 
-    public SelectionScreen(AndroidDriver<MobileElement> driver) {
+    public SelectionScreen(AndroidDriver driver) {
         super(driver);
     }
 

@@ -11,6 +11,6 @@ public class ApplyToJob extends BaseTest {
         tutorialScreen.skipTutorial();
         selectionScreen.selectIsAriyorum();
         candidateMainScreen.allowNotification();
-        candidateMainScreen.clickToJob();
+        //candidateMainScreen.clickToJob();
     }
 }
